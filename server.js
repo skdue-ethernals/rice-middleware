@@ -1,10 +1,10 @@
 require('dotenv').config();
 const axios = require('axios');
+const cors = require('cors');
 const express = require('express');
-const req = require('express/lib/request');
-const res = require('express/lib/response');
 
-const app = express()
+const app = express();
+app.use(cors());
 
 const bearerToken = process.env.TWITTER_API_KEY;
 const port = process.env.PORT;
